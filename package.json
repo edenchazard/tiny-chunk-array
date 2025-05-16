@@ -1,0 +1,54 @@
+{
+  "name": "@edenchazard/tiny-chunk-array",
+  "version": "1.0.0",
+  "license": "UNLICENSE",
+  "module": "src/index.ts",
+  "private": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "dist/*.d.ts"
+  ],
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edenchazard/tiny-chunk-array.git"
+  },
+  "bugs": {
+    "url": "https://github.com/edenchazard/tiny-chunk-array/issues"
+  },
+  "description": "A super simple, super short helper to chunk arrays.",
+  "keywords": [
+    "chunk",
+    "array",
+    "typescript"
+  ],
+  "homepage": "https://github.com/edenchazard/tiny-chunk-array",
+  "scripts": {
+    "build": "vite build",
+    "test:unit": "vitest",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "fmt:check": "prettier . --check",
+    "fmt": "prettier --write .",
+    "ts:check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.27.0",
+    "@types/bun": "latest",
+    "eslint": "^9.27.0",
+    "eslint-config-prettier": "^10.1.5",
+    "prettier": "^3.5.3",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.32.1",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^3.1.3"
+  }
+}
