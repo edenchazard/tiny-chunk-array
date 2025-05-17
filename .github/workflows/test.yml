@@ -3,7 +3,7 @@ name: Tests
 on: [push]
 
 jobs:
-  code-quality-and-validation:
+  tests:
     runs-on: ubuntu-latest
     if: github.event.pull_request.draft == false
     concurrency:
@@ -18,14 +18,14 @@ jobs:
         with:
           bun-version: latest
 
-      - name: Install bun dependencies
+      - name: Install Bun Dependencies
         run: bun install
 
       - name: Build
         run: bun run build
 
       - name: Prettier
-        run: bun run fmt:check
+        run: bun run fmt
 
       - name: ESLint
         run: bun run lint
@@ -33,5 +33,5 @@ jobs:
       - name: Typescript
         run: bun run ts:check
 
-      - name: Unit Tests
-        run: bun run test:unit -- --run
+      - name: Unit Tests And Coverage
+        run: bun run test:coverage
