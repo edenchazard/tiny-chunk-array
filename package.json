@@ -34,7 +34,6 @@
     "build": "vite build",
     "test:unit": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:coverage:report": "vitest run --report",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
     "fmt": "prettier . --check",
