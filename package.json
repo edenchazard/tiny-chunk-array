@@ -1,6 +1,6 @@
 {
   "name": "@edenchazard/tiny-chunk-array",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "UNLICENSE",
   "module": "src/index.ts",
   "private": false,
