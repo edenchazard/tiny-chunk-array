@@ -1,5 +1,5 @@
 import { it, expect, describe } from 'vitest';
-import chunkArray from '../src';
+import { chunkArray } from '../src';
 
 describe('chunkArray', () => {
   it('should chunk an array into smaller arrays of a specified size', () => {
