@@ -16,13 +16,6 @@
     "dist/*.d.ts"
   ],
   "types": "dist/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/edenchazard/tiny-chunk-array.git"
-  },
-  "bugs": {
-    "url": "https://github.com/edenchazard/tiny-chunk-array/issues"
-  },
   "description": "A super simple, super short helper to chunk arrays.",
   "keywords": [
     "chunk",
@@ -30,6 +23,17 @@
     "typescript"
   ],
   "homepage": "https://github.com/edenchazard/tiny-chunk-array",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edenchazard/tiny-chunk-array.git"
+  },
+  "bugs": {
+    "url": "https://github.com/edenchazard/tiny-chunk-array/issues"
+  },
+  "author": {
+    "name": "Eden Chazard",
+    "url": "https://www.npmjs.com/~edenchazard"
+  },
   "scripts": {
     "build": "vite build",
     "test:unit": "vitest",
