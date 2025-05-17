@@ -18,7 +18,7 @@ jobs:
         with:
           bun-version: latest
 
-      - name: Install bun dependencies
+      - name: Install Bun Dependencies
         run: bun install
 
       - name: Build
@@ -34,4 +34,10 @@ jobs:
         run: bun run ts:check
 
       - name: Unit Tests
-        run: bun run test:unit -- --run
+        run: bun run test:unit -- --run --coverage
+
+      - name: Vitest Coverage Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: coverage
