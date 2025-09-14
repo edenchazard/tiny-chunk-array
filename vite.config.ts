@@ -25,7 +25,7 @@ export default defineConfig({
     exclude: [...configDefaults.exclude],
     coverage: {
       provider: 'v8',
-      include: ['src/**/*.{js,ts}'],
+      include: ['src'],
       thresholds: {
         branches: 100,
         functions: 100,
