@@ -12,26 +12,25 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - uses: actions/setup-node@v4
         with:
-          bun-version: latest
+          node-version: '24.x'
+          registry-url: 'https://registry.npmjs.org'
 
-      - name: Install Bun Dependencies
-        run: bun install
+      - name: Install Dependencies
+        run: npm ci
 
       - name: Build
-        run: bun run build
+        run: npm run build
 
       - name: Prettier
-        run: bun run fmt
+        run: npm run fmt
 
       - name: ESLint
-        run: bun run lint
+        run: npm run lint
 
       - name: Typescript
-        run: bun run ts:check
+        run: npm run ts:check
 
       - name: Unit Tests And Coverage
-        run: bun run test:coverage
+        run: npm run test:coverage
