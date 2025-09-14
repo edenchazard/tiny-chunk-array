@@ -1,12 +1,13 @@
-import { defineConfig } from 'vite';
-import { resolve } from 'node:path';
+import { configDefaults, defineConfig } from 'vitest/config';
 import dts from 'vite-plugin-dts';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    tsconfigPaths(),
     dts({
-      entryRoot: 'src/',
+      entryRoot: 'src',
       tsconfigPath: './tsconfig.json',
     }),
   ],
@@ -15,9 +16,22 @@ export default defineConfig({
     emptyOutDir: true,
     lib: {
       entry: {
-        index: resolve('src/index.ts'),
+        index: 'src/index',
       },
-      formats: ['es', 'cjs'],
+      formats: ['es'],
+    },
+  },
+  test: {
+    exclude: [...configDefaults.exclude],
+    coverage: {
+      provider: 'v8',
+      include: ['src'],
+      thresholds: {
+        branches: 100,
+        functions: 100,
+        lines: 100,
+        statements: 100,
+      },
     },
   },
 });

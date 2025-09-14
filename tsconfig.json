@@ -1,10 +1,15 @@
 {
+  "extends": ["@tsconfig/node24/tsconfig.json"],
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "ES2024",
-    "useDefineForClassFields": true,
     "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ES2020"],
     "skipLibCheck": true,
+    "types": ["vite/client"],
+    "paths": {
+      "~src/*": ["./src/*"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -19,7 +24,8 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "noImplicitReturns": true
   },
-  "include": ["src"]
+  "include": ["src", "tests", "*.config.ts"]
 }
